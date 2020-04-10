@@ -2,7 +2,7 @@
   var logEnabled = true;
 
   var info = function(message) {
-    if(this.logEnabled) console.log("Quora-NoLog :: " + message);
+    if(this.logEnabled) console.log("Quora-Incognito :: " + message);
   }
 
   this.info('Keep contributing to Quora.');
@@ -22,15 +22,15 @@ var removeClass = function(element, className) { element.classList.remove(classN
 var signUpDialog = document.getElementsByClassName(this.quora.sign_up_dialog_class);
 
 if( this.signUpDialog.length ) {
-  this.info('Found a popup dialog box.');
+  this.info('Found a sign-up/log-in popup dialog.');
   this.hideElement(this.signUpDialog[0].parentNode.parentNode.parentNode);
-  this.info('You do not want the popup dialog box.');
+  this.info('Hid the sign-up/log-in popup dialog. You may continue reading.');
 
   if(document.body.classList.contains(this.quora.scroll_disable_class))
   {
-    this.info('Found a sroll disabler.');
-    this.info('You want to scroll through all answers.');
+    this.info('Found a scroll disabler.');
     this.removeClass(document.body, this.quora.scroll_disable_class);
+    this.info('Removed the scroll disabler. You may scroll through all answers.');
   }
-  this.info('You are all set. Keep reading.');
+  this.info('You are all set for now. Keep contributing to Quora.');
 }
